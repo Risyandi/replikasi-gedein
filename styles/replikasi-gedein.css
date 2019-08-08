@@ -1,0 +1,243 @@
+/* Reset margins and paddings on most elements */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+p,
+pre,
+blockquote,
+figure,
+hr {
+    margin: 0;
+    padding: 0;
+}
+
+/* font style */
+p {
+    font-family: Arial, 'Helvetica', sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    color: white;
+}
+
+div {
+    font-family: Arial, 'Helvetica', sans-serif;
+    font-size: 12px;
+    color: white;
+}
+
+.name-user-comment {
+    font-family: Arial, 'Helvetica', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: black;
+}
+
+/* main general */
+.main-container {
+    display: grid;
+    height: 100%;
+    grid-template-columns: repeat(8, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.sidebar-left-top {
+    padding: 36px;
+    background: linear-gradient(to bottom left, #0af2b8, #02a8dc) !important;
+    grid-column: 1 / 4;
+    grid-row: 1 / 1;
+}
+
+.sidebar-left-bottom {
+    padding: 36px;
+    background: #000;
+    grid-column: 1 / 4;
+    grid-row: 2 / 2;
+}
+
+.sidebar-right-top {
+    padding: 5px;
+    background: #fff;
+    grid-column: 4 / -1;
+    grid-row: 1 / 1;
+}
+
+.sidebar-right-bottom {
+    padding: 5px;
+    background: #e1e1e1;
+    grid-column: 4 / -1;
+    grid-row: 2 / 2;
+}
+
+.sidebar-left-top img {
+    display: block;
+    margin: auto;
+    width: 60%;
+}
+
+/* spesific */
+.sidebar-left-top .container-socmed-share a>img {
+    display: inline-block;
+    margin: auto;
+    width: 15%;
+    padding-bottom: 5px;
+    background: #0dffb4;
+}
+
+.container-socmed-share,
+.sidebar-left-top p,
+.sidebar-left-bottom p,
+.textarea-comment textarea,
+.button-comment {
+    margin-top: 10px;
+}
+
+.button-comment {
+    background: #cf1c26;
+    text-align: center;
+    padding: 10px;
+}
+
+.textarea-comment textarea {
+    background: white;
+    resize: none;
+    width: 98%;
+}
+
+/* bubbles */
+.speech-bubble-right,
+.speech-bubble-left {
+    position: relative;
+    border-radius: .4em;
+    padding: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 10px;
+}
+
+.speech-bubble-right img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    float: right;
+    right: -60px;
+    z-index: 2;
+    position: relative;
+    bottom: 50px;
+}
+
+.speech-bubble-left img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    float: left;
+    left: -60px;
+    z-index: 2;
+    position: relative;
+    bottom: 50px;
+}
+
+.speech-bubble-right.coral:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border: 45px solid transparent;
+    border-left-color: coral;
+    border-right: 0;
+    border-bottom: 0;
+    margin-top: -20.5px;
+    margin-right: -34px;
+}
+
+.speech-bubble-left.olive:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border: 45px solid transparent;
+    border-right-color: olive;
+    border-left: 0;
+    border-bottom: 0;
+    margin-top: -20.5px;
+    margin-left: -34px;
+}
+
+.speech-bubble-right.aqua:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border: 45px solid transparent;
+    border-left-color: #02a8dc;
+    border-right: 0;
+    border-bottom: 0;
+    margin-top: -20.5px;
+    margin-right: -34px;
+}
+
+.speech-bubble-left.aqua:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border: 45px solid transparent;
+    border-right-color: #02a8dc;
+    border-left: 0;
+    border-bottom: 0;
+    margin-top: -20.5px;
+    margin-left: -34px;
+}
+
+/* coloring */
+.coral {
+    background-color: coral;
+}
+
+.olive {
+    background-color: olive;
+}
+
+.aqua {
+    background-color: #02a8dc;
+}
+
+/* media screen */
+@media screen and (max-width:800px) {
+    .sidebar-left-top {
+        grid-row: 1 / 1;
+        grid-column: 1 / -1;
+    }
+
+    .sidebar-left-bottom {
+        grid-row: 2 / 2;
+        grid-column: 1 / -1;
+    }
+
+    .sidebar-right-top {
+        grid-row: 3 / 3;
+        grid-column: 1 / -1;
+    }
+
+    .sidebar-right-bottom {
+        grid-row: 4 / 4;
+        grid-column: 1 / -1;
+    }
+}
