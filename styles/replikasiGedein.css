@@ -127,7 +127,7 @@ div {
 .name-user-comment {
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
     font-weight: 700;
-    font-size: 14px;
+    font-size: 15px;
     margin-bottom: 5px;
     color: white;
 }
@@ -249,6 +249,47 @@ div {
 
 .mobile-only {
     visibility: hidden;
+}
+
+/* animate */
+.animate-up {
+    -webkit-animation: animate-keyframe-up .4s cubic-bezier(.39, .575, .567, 1) both;
+    animation: animate-keyframe-up .4s cubic-bezier(.39, .575, .565, 1) both;
+    animation-delay: 0 5%;
+}
+
+@keyframes animate-keyframe-up {
+    0% {
+        -webkit-transform: scale(.5);
+        transform: scale(.5);
+        -webkit-transform-origin: 100% 50%;
+        transform-origin: 100% 5%;
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transform-origin: 100% 50%;
+        transform-origin: 100% 5%;
+
+    }
+}
+
+@-webkit-keyframes animate-keyframe-up {
+    0% {
+        -webkit-transform: scale(.5);
+        transform: scale(.5);
+        -webkit-transform-origin: 100% 50%;
+        transform-origin: 100% 5%;
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transform-origin: 100% 50%;
+        transform-origin: 100% 5%;
+
+    }
 }
 
 /* media screen */
