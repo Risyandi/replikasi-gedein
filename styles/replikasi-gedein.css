@@ -19,25 +19,29 @@ hr {
 }
 
 /* font style */
+@font-face {
+    font-family: Roboto;
+    font-weight: 400;
+    font-display: swap;
+    src: local("Roboto") url(fonts/roboto-regular.woff2) format('woff2');
+}
+
 p {
-    font-family: Arial, 'Helvetica', sans-serif;
-    font-size: 13px;
-    font-weight: bold;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
     color: white;
 }
 
 div {
-    font-family: Arial, 'Helvetica', sans-serif;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-weight: 400;
     font-size: 12px;
     color: white;
 }
 
-.name-user-comment {
-    font-family: Arial, 'Helvetica', sans-serif;
-    font-size: 12px;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: black;
+.sidebar-left-top p {
+    font-size: 18px;
 }
 
 /* main general */
@@ -90,27 +94,42 @@ div {
     margin: auto;
     width: 15%;
     padding-bottom: 5px;
+    margin-right: 5px;
     background: #0dffb4;
 }
 
 .container-socmed-share,
+.container-socmed-share a,
 .sidebar-left-top p,
 .sidebar-left-bottom p,
 .textarea-comment textarea,
 .button-comment {
     margin-top: 10px;
+    text-decoration: none;
 }
 
 .button-comment {
     background: #cf1c26;
     text-align: center;
     padding: 10px;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
 }
 
 .textarea-comment textarea {
     background: white;
     resize: none;
     width: 98%;
+}
+
+.name-user-comment {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: white;
 }
 
 /* bubbles */
@@ -122,6 +141,15 @@ div {
     margin-left: 50px;
     margin-right: 50px;
     margin-top: 10px;
+    font-size: 14px;
+}
+
+.speech-bubble-left {
+    text-align: left;
+}
+
+.speech-bubble-right {
+    text-align: right;
 }
 
 .speech-bubble-right img {
@@ -219,6 +247,10 @@ div {
     background-color: #02a8dc;
 }
 
+.mobile-only {
+    visibility: hidden;
+}
+
 /* media screen */
 @media screen and (max-width:800px) {
     .sidebar-left-top {
@@ -239,5 +271,9 @@ div {
     .sidebar-right-bottom {
         grid-row: 4 / 4;
         grid-column: 1 / -1;
+    }
+
+    .mobile-only {
+        visibility: visible;
     }
 }
