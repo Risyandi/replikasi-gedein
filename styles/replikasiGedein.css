@@ -269,22 +269,30 @@ div {
 
 .cloud-1 {
     position: relative;
-    /* -webkit-transform: scale(0.9);
-    -moz-transform: scale(0.9);
-    transform: scale(0.9); */
-    -webkit-animation: moveup-cloud 10s linear infinite alternate;
-    -moz-animation: moveup-cloud 10s linear infinite alternate;
-    -o-animation: moveup-cloud 10s linear infinite alternate;
+    -webkit-animation: moveup-cloud 10s linear infinite, 4s ease-in-out infinite alternate;
+    -moz-animation: moveup-cloud 10s linear infinite, 4s ease-in-out infinite alternate;
+    -o-animation: moveup-cloud 10s linear infinite, 4s ease-in-out infinite alternate;
 }
 
-.cloud-1 {
+.cloud-2 {
     position: relative;
-    /* -webkit-transform: scale(0.9);
-    -moz-transform: scale(0.9);
-    transform: scale(0.9); */
-    -webkit-animation: moveup-cloud 20s linear infinite alternate;
-    -moz-animation: moveup-cloud 20s linear infinite alternate;
-    -o-animation: moveup-cloud 20s linear infinite alternate;
+    -webkit-animation: moveup-cloud 20s linear infinite, 5s ease-in-out infinite alternate;
+    -moz-animation: moveup-cloud 20s linear infinite, 5s ease-in-out infinite alternate;
+    -o-animation: moveup-cloud 20s linear infinite, 5s ease-in-out infinite alternate;
+}
+
+.cloud-3 {
+    position: relative;
+    -webkit-animation: moveup-cloud 15s linear infinite, 10s ease-in-out infinite alternate;
+    -moz-animation: moveup-cloud 15s linear infinite, 10s ease-in-out infinite alternate;
+    -o-animation: moveup-cloud 15s linear infinite, 10s ease-in-out infinite alternate;
+}
+
+.cloud-4 {
+    position: relative;
+    -webkit-animation: moveup-cloud 8s linear infinite, 3s ease-in-out infinite alternate;
+    -moz-animation: moveup-cloud 8s linear infinite, 3s ease-in-out infinite alternate;
+    -o-animation: moveup-cloud 8s linear infinite, 3s ease-in-out infinite alternate;
 }
 
 @keyframes moveup-cloud {

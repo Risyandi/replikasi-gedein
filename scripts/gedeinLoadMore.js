@@ -1,9 +1,20 @@
+let target = document.getElementById('element');
+let input = document.getElementById('comment');
+let button = document.getElementById('button-comment');
+
 window.onload = function () {
     favouriteComment();
 }
 
+button.addEventListener("click", function () {
+    console.log(button.textContent);
+});
+
+input.addEventListener("keyup", function () {
+    console.log(input.value, 'value input');
+});
+
 function favouriteComment() {
-    console.log("print element");
     let element = "",
         sidebarRightBottom = document.getElementById('sidebar-right-bottom');
     for (let index = 0; index < 5; index++) {
