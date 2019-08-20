@@ -1,7 +1,7 @@
 let target = document.getElementById('element');
-let input = document.getElementById('comment');
 let button = document.getElementById('button-comment');
 let listElement = document.querySelector('#sidebar-right-bottom');
+let sidebarTop = document.querySelector('#sidebar-right-top');
 
 window.onload = function () {
     loadMore();
@@ -14,7 +14,9 @@ listElement.addEventListener("scroll", function () {
 });
 
 button.addEventListener("click", function () {
-    console.log(button.textContent);
+    let input = document.getElementById('comment');
+    input = input.value;
+    createComment(input);
 });
 
 input.addEventListener("keyup", function () {
@@ -52,4 +54,20 @@ function loadMore() {
     setTimeout(() => {
         listElement.innerHTML += element;
     }, 500);
+}
+
+function createComment(comment) {
+    let bubbleComment = "",
+        elm = "";
+    elm = document.createElement("div");
+    elm.className += "comment-bubble cloud-1";
+    bubbleComment = `<div class="speech-bubble-left olive">
+                        <div class="name-user-comment">username</div>
+                                ${comment}
+                            <img src="https://d28j15pnfa5oxx.cloudfront.net/front_img/default_profile.png"
+                            alt="profile-comment">
+                    </div>`;
+
+    elm.innerHTML = bubbleComment;
+    sidebarTop.append(elm);
 }
