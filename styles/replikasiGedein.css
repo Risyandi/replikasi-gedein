@@ -87,14 +87,14 @@ div {
 .sidebar-left-top img {
     display: block;
     margin: auto;
-    width: 60%;
+    width: 50%;
 }
 
 /* spesific */
 .sidebar-left-top .container-socmed-share a>img {
     display: inline-block;
     margin: auto;
-    width: 15%;
+    width: 10%;
     padding-bottom: 5px;
     margin-right: 5px;
     background: #0dffb4;
@@ -407,6 +407,9 @@ div {
         bottom: 85px;
     }
 
+    .sidebar-left-top .container-socmed-share a>img {
+        width: 15%;
+    }
     .mobile-only {
         visibility: visible;
     }
