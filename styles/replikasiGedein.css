@@ -118,6 +118,11 @@ div {
     font-size: 15px;
     font-weight: 700;
     color: white;
+    cursor: pointer;
+}
+
+.button-comment:hover {
+    background: #f13860
 }
 
 .textarea-comment textarea {
