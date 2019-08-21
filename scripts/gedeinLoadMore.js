@@ -19,10 +19,6 @@ button.addEventListener("click", function () {
     createComment(input);
 });
 
-input.addEventListener("keyup", function () {
-    console.log(input.value, 'value input');
-});
-
 function loadMore() {
     let element = "",
         start = 0,
