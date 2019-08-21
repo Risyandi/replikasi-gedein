@@ -1,23 +1,60 @@
-let target = document.getElementById('element');
-let button = document.getElementById('button-comment');
-let listElement = document.querySelector('#sidebar-right-bottom');
+let button = document.querySelector('#button-comment');
+let sidebarBottom = document.querySelector('#sidebar-right-bottom');
 let sidebarTop = document.querySelector('#sidebar-right-top');
 
 window.onload = function () {
     loadMore();
 }
 
-listElement.addEventListener("scroll", function () {
-    if (listElement.scrollTop + listElement.clientHeight >= listElement.scrollHeight) {
+sidebarBottom.addEventListener("scroll", function () {
+    if (sidebarBottom.scrollTop + sidebarBottom.clientHeight >= sidebarBottom.scrollHeight) {
         loadMore();
     }
 });
 
 button.addEventListener("click", function () {
-    let input = document.getElementById('comment');
-    input = input.value;
-    createComment(input);
+    let comment = document.getElementById('comment');
+    let cloudNum = Math.floor(Math.random() * 4) + 1;
+    let cloudPos = Math.floor(Math.random() * 2) + 1;
+    let cloudColor = Math.floor(Math.random() * 3) + 1;
+    comment = comment.value;
+    createComment(comment, cloudNum, cloudPos, cloudColor);
 });
+
+function createComment(comment, cloudNum, cloudPos, cloudColor) {
+    let bubbleComment = "", elm = "", userRandom = "";
+    elm = document.createElement("div");
+    elm.className += "comment-bubble cloud-" + cloudNum;
+    
+    /** cloud position */
+    if (cloudPos == 1) {
+        cloudPos = "right";
+    } else {
+        cloudPos = "left";
+    }
+
+    /** cloud position */
+    if (cloudColor == 1) {
+        cloudColor = "coral";
+        userRandom = "username 1";
+    } else if (cloudColor == 2) {
+        cloudColor = "olive";
+        userRandom = "username 2";
+    } else {
+        cloudColor = "aqua";
+        userRandom = "username 3";
+    }
+
+    bubbleComment = `<div class="speech-bubble-${cloudPos} ${cloudColor}">
+                        <div class="name-user-comment">${userRandom}</div>
+                                ${comment}
+                            <img src="https://d28j15pnfa5oxx.cloudfront.net/front_img/default_profile.png"
+                            alt="profile-comment">
+                    </div>`;
+
+    elm.innerHTML = bubbleComment;
+    sidebarTop.append(elm);
+}
 
 function loadMore() {
     let element = "",
@@ -48,22 +85,14 @@ function loadMore() {
                 </div>`;
     }
     setTimeout(() => {
-        listElement.innerHTML += element;
+        sidebarBottom.innerHTML += element;
     }, 500);
 }
 
-function createComment(comment) {
-    let bubbleComment = "",
-        elm = "";
-    elm = document.createElement("div");
-    elm.className += "comment-bubble cloud-1";
-    bubbleComment = `<div class="speech-bubble-left olive">
-                        <div class="name-user-comment">username</div>
-                                ${comment}
-                            <img src="https://d28j15pnfa5oxx.cloudfront.net/front_img/default_profile.png"
-                            alt="profile-comment">
-                    </div>`;
-
-    elm.innerHTML = bubbleComment;
-    sidebarTop.append(elm);
-}
+/** temporary
+    function randomComment() {
+        let cloudNum = Math.floor(Math.random() * 4) + 1;
+        let cloudPos = Math.floor(Math.random() * 2) + 1;
+        let cloudColor = Math.floor(Math.random() * 3) + 1;
+    } 
+ */
