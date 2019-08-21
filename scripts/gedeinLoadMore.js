@@ -2,16 +2,19 @@ let button = document.querySelector('#button-comment');
 let sidebarBottom = document.querySelector('#sidebar-right-bottom');
 let sidebarTop = document.querySelector('#sidebar-right-top');
 
+/** for onload */
 window.onload = function () {
     loadMore();
 }
 
+/** for infinite comments */
 sidebarBottom.addEventListener("scroll", function () {
     if (sidebarBottom.scrollTop + sidebarBottom.clientHeight >= sidebarBottom.scrollHeight) {
         loadMore();
     }
 });
 
+/** for comments */
 button.addEventListener("click", function () {
     let comment = document.getElementById('comment');
     let cloudNum = Math.floor(Math.random() * 4) + 1;
@@ -57,9 +60,8 @@ function createComment(comment, cloudNum, cloudPos, cloudColor) {
 }
 
 function loadMore() {
-    let element = "",
-        start = 0,
-        limit = 3;
+    let element = "", start = 0, limit = 3;
+
     for (let index = start; index < limit; index++) {
         element += `<div class="comment-bubble animate-show">
                     <div class="speech-bubble-right aqua">

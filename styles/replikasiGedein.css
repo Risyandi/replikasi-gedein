@@ -100,6 +100,10 @@ div {
     background: #0dffb4;
 }
 
+.sidebar-left-top .container-socmed-share a>img:hover {
+    background: #f13860;
+}
+
 .container-socmed-share,
 .container-socmed-share a,
 .sidebar-left-top p,
@@ -122,7 +126,7 @@ div {
 }
 
 .button-comment:hover {
-    background: #f13860
+    background: #f13860;
 }
 
 .textarea-comment textarea {
@@ -169,10 +173,12 @@ div {
     height: 40px;
     border-radius: 50%;
     float: right;
-    right: -70px;
+    right: -60px;
     z-index: 2;
-    position: relative;
-    bottom: 35px;
+    position: absolute;
+    display: inline-block;
+    vertical-align: top;
+    top: 0;
 }
 
 .speech-bubble-left img {
@@ -180,10 +186,12 @@ div {
     height: 40px;
     border-radius: 50%;
     float: left;
-    left: -70px;
+    left: -60px;
     z-index: 2;
-    position: relative;
-    bottom: 35px;
+    position: absolute;
+    display: inline-block;
+    vertical-align: top;
+    top: 0;
 }
 
 /* bubble position arrow*/
