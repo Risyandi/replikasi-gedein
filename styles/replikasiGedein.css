@@ -121,6 +121,8 @@ div {
 }
 
 .textarea-comment textarea {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-size: 12px;
     background: white;
     resize: none;
     width: 98%;
@@ -144,21 +146,17 @@ div {
 }
 
 .speech-bubble-left {
-    margin-left: 65px;
+    margin-left: 80px;
     margin-right: 40px;
+    text-align: left;
+    z-index: 2;
 }
 
 .speech-bubble-right {
     margin-left: 40px;
-    margin-right: 65px;
-}
-
-.speech-bubble-left {
-    text-align: left;
-}
-
-.speech-bubble-right {
+    margin-right: 80px;
     text-align: right;
+    z-index: 2;
 }
 
 .speech-bubble-right img {
@@ -183,64 +181,113 @@ div {
     bottom: 35px;
 }
 
+/* bubble position arrow*/
 .speech-bubble-right.coral:after {
+    /* top: 50%; */
+    /* margin-top: -20.5px; */
     content: '';
     position: absolute;
     right: 0;
-    top: 50%;
     width: 0;
     height: 0;
     border: 15px solid transparent;
     border-left-color: coral;
     border-right: 0;
     border-bottom: 15px solid transparent;
-    margin-top: -20.5px;
     margin-right: -15px;
+    vertical-align: top;
+    display: inline-block;
+    top: 7px;
 }
 
-.speech-bubble-left.olive:before {
+.speech-bubble-left.coral:before {
+    /* top: 50%; */
+    /* margin-top: -20.5px; */
     content: '';
     position: absolute;
     left: 0;
-    top: 50%;
+    width: 0;
+    height: 0;
+    border: 15px solid transparent;
+    border-right-color: coral;
+    border-left: 0;
+    border-bottom: 15px solid transparent;
+    margin-left: -15px;
+    vertical-align: top;
+    display: inline-block;
+    top: 7px;
+}
+
+.speech-bubble-right.olive:after {
+    /* top: 50%; */
+    /* margin-top: -20.5px; */
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 0;
+    height: 0;
+    border: 15px solid transparent;
+    border-left-color: olive;
+    border-right: 0;
+    border-bottom: 15px solid transparent;
+    margin-right: -15px;
+    vertical-align: top;
+    display: inline-block;
+    top: 7px;
+}
+
+.speech-bubble-left.olive:before {
+    /* top: 50%; */
+    /* margin-top: -20.5px; */
+    content: '';
+    position: absolute;
+    left: 0;
     width: 0;
     height: 0;
     border: 15px solid transparent;
     border-right-color: olive;
     border-left: 0;
     border-bottom: 15px solid transparent;
-    margin-top: -20.5px;
     margin-left: -15px;
+    vertical-align: top;
+    display: inline-block;
+    top: 7px;
 }
 
 .speech-bubble-right.aqua:after {
+    /* top: 50%; */
+    /* margin-top: -20.5px; */
     content: '';
     position: absolute;
     right: 0;
-    top: 50%;
     width: 0;
     height: 0;
     border: 15px solid transparent;
     border-left-color: #02a8dc;
     border-right: 0;
     border-bottom: 15px solid transparent;
-    margin-top: -20.5px;
     margin-right: -15px;
+    vertical-align: top;
+    display: inline-block;
+    top: 7px;
 }
 
 .speech-bubble-left.aqua:before {
+    /* top: 50%; */
+    /* margin-top: -20.5px; */
     content: '';
     position: absolute;
     left: 0;
-    top: 50%;
     width: 0;
     height: 0;
     border: 15px solid transparent;
     border-right-color: #02a8dc;
     border-left: 0;
     border-bottom: 15px solid transparent;
-    margin-top: -20.5px;
     margin-left: -15px;
+    vertical-align: top;
+    display: inline-block;
+    top: 7px;
 }
 
 /* coloring */
@@ -256,6 +303,7 @@ div {
     background-color: #02a8dc;
 }
 
+/* icon socmed visibility*/
 .mobile-only {
     visibility: hidden;
 }
@@ -390,26 +438,33 @@ div {
         height: 40px;
         border-radius: 50%;
         float: right;
-        right: -70px;
+        right: -60px;
         z-index: 2;
-        position: relative;
-        bottom: 85px;
+        position: absolute;
+        /* bottom: 85px; */
+        display: inline-block;
+        vertical-align: top;
+        top: 0;
     }
-    
+
     .speech-bubble-left img {
         width: 40px;
         height: 40px;
         border-radius: 50%;
         float: left;
-        left: -70px;
+        left: -60px;
         z-index: 2;
-        position: relative;
-        bottom: 85px;
+        position: absolute;
+        /* bottom: 85px; */
+        display: inline-block;
+        vertical-align: top;
+        top: 0;
     }
 
     .sidebar-left-top .container-socmed-share a>img {
         width: 15%;
     }
+
     .mobile-only {
         visibility: visible;
     }
