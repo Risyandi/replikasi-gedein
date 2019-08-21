@@ -17,12 +17,22 @@ sidebarBottom.addEventListener("scroll", function () {
 /** for comments */
 button.addEventListener("click", function () {
     let comment = document.getElementById('comment');
+    let obj = randomize();
+    comment = comment.value;
+    createComment(comment, obj.cloudNum, obj.cloudPos, obj.cloudColor);
+});
+
+function randomize() {
     let cloudNum = Math.floor(Math.random() * 4) + 1;
     let cloudPos = Math.floor(Math.random() * 2) + 1;
     let cloudColor = Math.floor(Math.random() * 3) + 1;
-    comment = comment.value;
-    createComment(comment, cloudNum, cloudPos, cloudColor);
-});
+    
+    return {
+        cloudNum: cloudNum,
+        cloudPos: cloudPos,
+        cloudColor: cloudColor
+    }
+}
 
 function createComment(comment, cloudNum, cloudPos, cloudColor) {
     let bubbleComment = "", elm = "", userRandom = "";
