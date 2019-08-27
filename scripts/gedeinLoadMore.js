@@ -26,7 +26,7 @@ function randomize() {
     let cloudNum = Math.floor(Math.random() * 4) + 1;
     let cloudPos = Math.floor(Math.random() * 2) + 1;
     let cloudColor = Math.floor(Math.random() * 3) + 1;
-    
+
     return {
         cloudNum: cloudNum,
         cloudPos: cloudPos,
@@ -38,7 +38,7 @@ function createComment(comment, cloudNum, cloudPos, cloudColor) {
     let bubbleComment = "", elm = "", userRandom = "";
     elm = document.createElement("div");
     elm.className += "comment-bubble cloud-" + cloudNum;
-    
+
     /** cloud position */
     if (cloudPos == 1) {
         cloudPos = "right";
@@ -100,11 +100,3 @@ function loadMore() {
         sidebarBottom.innerHTML += element;
     }, 500);
 }
-
-/** temporary
-    function randomComment() {
-        let cloudNum = Math.floor(Math.random() * 4) + 1;
-        let cloudPos = Math.floor(Math.random() * 2) + 1;
-        let cloudColor = Math.floor(Math.random() * 3) + 1;
-    } 
- */
