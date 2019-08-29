@@ -2,19 +2,52 @@ let button = document.querySelector('#button-comment');
 let sidebarBottom = document.querySelector('#sidebar-right-bottom');
 let sidebarTop = document.querySelector('#sidebar-right-top');
 
-/** for onload */
+/** onload */
 window.onload = function () {
     loadMore();
 }
 
-/** for infinite comments */
+/** infinite favorites comments */
 sidebarBottom.addEventListener("scroll", function () {
     if (sidebarBottom.scrollTop + sidebarBottom.clientHeight >= sidebarBottom.scrollHeight) {
         loadMore();
     }
 });
 
-/** for comments */
+/** load content */
+function loadMore() {
+    let element = "", start = 0, limit = 3;
+
+    for (let index = start; index < limit; index++) {
+        element += `<div class="comment-bubble animate-show">
+                    <div class="speech-bubble-right aqua">
+                        <div class="name-user-comment">Down Johnson</div>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
+                        voluptatem quia
+                        odio quasi eligendi a, rerum reprehenderit quibusdam quis quam, repellat officiis delectus esse
+                        fugit culpa neque rem sint cumque.
+                        <img src="https://d28j15pnfa5oxx.cloudfront.net/front_img/default_profile.png"
+                            alt="profile-comment">
+                    </div>
+                </div>
+                <div class="comment-bubble animate-show">
+                <div class="speech-bubble-left aqua">
+                    <div class="name-user-comment">Hasan</div>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
+                    voluptatem quia
+                    odio quasi eligendi a, rerum reprehenderit quibusdam quis quam, repellat officiis delectus esse
+                    fugit culpa neque rem sint cumque.
+                    <img src="https://d28j15pnfa5oxx.cloudfront.net/front_img/default_profile.png"
+                        alt="profile-comment">
+                </div>
+                </div>`;
+    }
+    setTimeout(() => {
+        sidebarBottom.innerHTML += element;
+    }, 500);
+}
+
+/** send comments */
 button.addEventListener("click", function () {
     let comment = document.getElementById('comment');
     let obj = randomize();
@@ -22,6 +55,7 @@ button.addEventListener("click", function () {
     createComment(comment, obj.cloudNum, obj.cloudPos, obj.cloudColor);
 });
 
+/** randomize comments */
 function randomize() {
     let cloudNum = Math.floor(Math.random() * 4) + 1;
     let cloudPos = Math.floor(Math.random() * 2) + 1;
@@ -34,6 +68,7 @@ function randomize() {
     }
 }
 
+/** create comments */
 function createComment(comment, cloudNum, cloudPos, cloudColor) {
     let bubbleComment = "", elm = "", userRandom = "";
     elm = document.createElement("div");
@@ -67,36 +102,4 @@ function createComment(comment, cloudNum, cloudPos, cloudColor) {
 
     elm.innerHTML = bubbleComment;
     sidebarTop.append(elm);
-}
-
-function loadMore() {
-    let element = "", start = 0, limit = 3;
-
-    for (let index = start; index < limit; index++) {
-        element += `<div class="comment-bubble animate-show">
-                    <div class="speech-bubble-right aqua">
-                        <div class="name-user-comment">Down Johnson</div>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
-                        voluptatem quia
-                        odio quasi eligendi a, rerum reprehenderit quibusdam quis quam, repellat officiis delectus esse
-                        fugit culpa neque rem sint cumque.
-                        <img src="https://d28j15pnfa5oxx.cloudfront.net/front_img/default_profile.png"
-                            alt="profile-comment">
-                    </div>
-                </div>
-                <div class="comment-bubble animate-show">
-                <div class="speech-bubble-left aqua">
-                    <div class="name-user-comment">Hasan</div>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
-                    voluptatem quia
-                    odio quasi eligendi a, rerum reprehenderit quibusdam quis quam, repellat officiis delectus esse
-                    fugit culpa neque rem sint cumque.
-                    <img src="https://d28j15pnfa5oxx.cloudfront.net/front_img/default_profile.png"
-                        alt="profile-comment">
-                </div>
-                </div>`;
-    }
-    setTimeout(() => {
-        sidebarBottom.innerHTML += element;
-    }, 500);
 }
